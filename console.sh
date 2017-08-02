@@ -2,28 +2,22 @@
 
 function build
 {
-    docker build -t cordova .
+    docker build -t luanlmd/cordova .
 }
 
 function bash
 {
-    docker run -it --rm cordova bash
+    docker run -it --rm luanlmd/cordova bash
 }
 
 function cordova
 {
-    docker run -it --rm --privileged -v /dev/bus/usb:/dev/bus/usb -v $PWD/src:/src cordova cordova $1 $2 $3 $4
-}
-
-function run
-{
-    cordova run android --device
+    docker run -it --rm --privileged -v /dev/bus/usb:/dev/bus/usb -v $PWD/src:/src luanlmd/cordova cordova $1 $2 $3 $4
 }
 
 function aliases
 {
-    echo "alias cdv='docker run -it --rm --privileged -v /dev/bus/usb:/dev/bus/usb -v \$PWD:/src cordova cordova'" >> ~/.bash_aliases
-    echo "alias cdvbash='docker run -it --rm --privileged -v /dev/bus/usb:/dev/bus/usb -v \$PWD:/src cordova bash'" >> ~/.bash_aliases
+    echo "alias docker-cordova='docker run -it --rm --privileged -v /dev/bus/usb:/dev/bus/usb -v \$PWD:/src luanlmd/cordova cordova'" >> ~/.bash_aliases
     source ~/.bash_aliases
 }
 

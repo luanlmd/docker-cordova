@@ -26,7 +26,6 @@ RUN wget https://dl.google.com/android/repository/platform-tools-latest-linux.zi
 RUN unzip sdk.zip -d /usr/local/android-sdk
 RUN rm sdk.zip
 
-ENV GRADLE_USER_HOME /src/gradle
 ENV ANDROID_HOME /usr/local/android-sdk
 ENV PATH $PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools/bin
 
@@ -36,7 +35,9 @@ RUN echo y | sdkmanager "build-tools;26.0.1"
 
 RUN cordova telemetry off
 
+RUN cd /root && cordova create test && cd test && cordova platform add android && cordova build && cd .. && rm -Rf test
+
 VOLUME /src
 WORKDIR /src
 
-CMD ["bash"]
+CMD ["cordova"]
