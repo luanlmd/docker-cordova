@@ -35,7 +35,9 @@ RUN echo y | sdkmanager "build-tools;26.0.1"
 
 RUN cordova telemetry off
 
-RUN cd /root && cordova create test && cd test && cordova platform add android && cordova build && cd .. && rm -Rf test
+RUN cordova create test
+RUN cd test && cordova platform add android && cordova build
+RUN rm -Rf test
 
 VOLUME /src
 WORKDIR /src
