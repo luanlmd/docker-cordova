@@ -10,7 +10,7 @@ RUN apt clean
 
 RUN ln -s /usr/bin/nodejs /usr/bin/node
 
-RUN npm i cordova -g --max-old-space-size=128
+RUN npm i cordova -g
 
 RUN wget http://download.java.net/java/jdk8u152/archive/b05/binaries/jdk-8u152-ea-bin-b05-linux-x64-20_jun_2017.tar.gz -O smelly.tar.gz
 RUN tar -xvzf smelly.tar.gz -C /usr/local
