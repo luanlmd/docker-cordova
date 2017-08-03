@@ -4,7 +4,7 @@ MAINTAINER Luan Almeida <luanlmd@gmail.com>
 
 RUN apt update
 RUN apt upgrade -y
-RUN apt install nodejs npm wget unzip -y
+RUN apt install nodejs npm wget unzip gradle -y
 RUN apt clean
 
 RUN ln -s /usr/bin/nodejs /usr/bin/node
