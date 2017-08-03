@@ -17,7 +17,7 @@ function cordova
 
 function aliases
 {
-    echo "alias cordovad='docker run -it --rm --privileged --expose 8000 -p 8000:8000 -v /dev/bus/usb:/dev/bus/usb -v \$PWD:/src luanlmd/cordova cordova'" >> ~/.bash_aliases
+    echo "alias cordova='docker run -it --rm --privileged --expose 8000 -p 8000:8000 -v /dev/bus/usb:/dev/bus/usb -v \$PWD:/src luanlmd/cordova cordova'" >> ~/.bash_aliases
     source ~/.bash_aliases
 }
 
