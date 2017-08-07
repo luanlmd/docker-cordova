@@ -27,7 +27,7 @@ RUN tar xf node.tar.xz -C /opt/
 RUN rm node.tar.xz
 ENV NODE_HOME /opt/node-v8.2.1-linux-x64/bin
 
-ENV PATH $PATH:$NODE_HOME:$JAVA_HOME:$GRADLE_HOME:$ANDROID_HOME/tools/bin
+ENV PATH $PATH:$NODE_HOME:$JAVA_HOME:$GRADLE_HOME:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools
 
 RUN echo y | sdkmanager "platform-tools"
 RUN echo y | sdkmanager "build-tools;26.0.1"
