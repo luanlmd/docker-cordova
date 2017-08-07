@@ -7,7 +7,7 @@ function build
 
 function bash
 {
-    docker run -it --rm luanlmd/cordova bash
+    docker run -it --rm --privileged -v /dev/bus/usb:/dev/bus/usb luanlmd/cordova bash
 }
 
 function cordova
